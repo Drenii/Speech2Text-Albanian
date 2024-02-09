@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Transkriptimi i tekstit</title>
+    <style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+h1 {
+    margin-bottom: 20px;
+}
+
+form {
+    margin-bottom: 20px;
+}
+
+input[type="file"] {
+    margin-right: 10px;
+}
+
+input[type="submit"] {
+    padding: 10px 20px; /* Increase the padding to make the button bigger */
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 40px; /* Add border-radius property to make the button rounded */
+    cursor: pointer;
+}
+
+p {
+    margin-bottom: 10px;
+}
+
+.error {
+    color: red;
+}
+
+/* Responsive Styles */
+
+/* Small screens (up to 480px) */
+@media screen and (max-width: 480px) {
+    body {
+        padding: 5px;
+    }
+
+    h1 {
+        font-size: 20px;
+    }
+
+    input[type="submit"] {
+        padding: 6px 12px;
+        border-radius: 25px;
+    }
+}
+
+/* Medium screens (481px - 768px) */
+@media screen and (min-width: 481px) and (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+
+    input[type="submit"] {
+        padding: 8px 16px;
+        border-radius: 30px;
+    }
+}
+
+
+
+    </style>
+</head>
+<body>
+    <h1>Shto dokumentin per transkriptim</h1>
+    <h3>Dokumenti duhet te jetë i formatit audio wav dhe duhet te jetë maksimumi 10 sekonda i gjatë</h3>
+    <form method="POST" enctype="multipart/form-data">
+        {{ form.csrf_token }}
+        <input type="file" name="audio_file">
+        <input type="submit" value="Gjenero tekstin">
+    </form>
+</body>
+</html>
